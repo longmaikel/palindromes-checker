@@ -2,8 +2,8 @@
 <div class="palindrome-form">
   <form @submit.prevent="checkPalindrome">
     <span class="message">{{ message }}</span>
-    <input type="text" name="palindrome" placeholder="Palindrome" v-model="palindrome">
-    <button type="submit">Check</button>
+    <input type="text" name="palindrome" placeholder="Palindrome" v-model="palindrome" @focusin="clear">
+    <button type="submit" :disabled="!palindrome">Check</button>
   </form>
 </div>
 </template>
@@ -12,12 +12,23 @@ export default {
   data: () => {
     return {
       palindrome: null,
-      message: null
+      message: null,
+      isChecked: false
     };
   },
   methods: {
+    clear() {
+      if (this.isChecked) {
+        this.palindrome = null;
+        this.message = null;
+        this.isChecked = false;
+      }
+    },
     checkPalindrome() {
-      this.$store.dispatch('checkPalindrome', this.palindrome);
+      this.$store.dispatch('checkPalindrome', this.palindrome)
+      .then(message => this.message = message)
+      .catch(error => this.message = error)
+      .finally(() => this.isChecked = true)
     }
   }
 };
