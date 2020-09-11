@@ -2,6 +2,7 @@
   <div class="about">
     <h1>Login</h1>
     <form @submit.prevent="login">
+      <span class="error">{{ error }}</span>
       <input type="text" name="user" placeholder="Login" v-model="user">
       <input type="password" name="password" placeholder="Password" v-model="password">
       <button type="submit">Sign In</button>
@@ -14,7 +15,8 @@ export default {
   data: () => {
     return {
       user: null,
-      password: null
+      password: null,
+      error: null
     };
   },
   methods: {
@@ -26,6 +28,9 @@ export default {
       this.$store.dispatch('login', credentials)
       .then(() => {
         this.$router.push({name: "Home"})
+      })
+      .catch(error => {
+        this.error = error;
       });
     }
   }
