@@ -18,12 +18,15 @@ export default {
     };
   },
   methods: {
-    login: () => {
+    login() {
       let credentials = {
         user: this.user,
         password: this.password
       };
-      this.$store.dispatch('login', credentials);
+      this.$store.dispatch('login', credentials)
+      .then(() => {
+        this.$router.push({name: "Home"})
+      });
     }
   }
 };

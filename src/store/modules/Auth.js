@@ -8,14 +8,30 @@ const state = {
     logged: false
 };
 
-const getters = {};
+const getters = {
+    credentials: state => state.credentials
+};
 
 const actions = {
+    login: ({commit}, {user, password}) => {
+        return new Promise((resolve, reject) => {
+            const correctCredentials = getters.credentials;
+            if (user === correctCredentials.user && password === correctCredentials.password) {
+                commit('LOGIN', true);
+                resolve(true);
+            } else {
+                commit('LOGIN', false);
+                reject(false);
+            }
+        })
 
+    }
 };
 
 const mutations = {
-
+    LOGIN: (state, value) => {
+        state.logged = value;
+    }
 };
 
 export default {
