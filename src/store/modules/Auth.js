@@ -3,8 +3,6 @@ const state = {
         user: 'root',
         password: 'secret'
     },
-    user: null,
-    password: null,
     logged: false
 };
 
