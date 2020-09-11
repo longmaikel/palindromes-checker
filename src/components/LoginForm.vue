@@ -1,16 +1,21 @@
 <template>
-<div class="login-form">
-  <form @submit.prevent="login">
-    <span class="error">{{ error }}</span>
-    <input type="text" name="user" placeholder="Login" v-model="user">
-    <input type="password" name="password" placeholder="Password" v-model="password">
-    <button type="submit">Sign In</button>
-  </form>
-</div>
+  <div class="login-form">
+    <form @submit.prevent="login">
+      <span class="login-form__error">{{ error }}</span>
+      <input type="text" name="user" placeholder="Login" v-model="user" />
+      <input
+        type="password"
+        name="password"
+        placeholder="Password"
+        v-model="password"
+      />
+      <button type="submit">Sign In</button>
+    </form>
+  </div>
 </template>
 <script>
 export default {
-  data: () => {
+  data() {
     return {
       user: null,
       password: null,
@@ -23,18 +28,15 @@ export default {
         user: this.user,
         password: this.password
       };
-      this.$store.dispatch('login', credentials)
-          .then(() => {
-            this.$router.push({name: "Home"})
-          })
-          .catch(error => {
-            this.error = error;
-          });
+      this.$store
+        .dispatch("login", credentials)
+        .then(() => {
+          this.$router.push({ name: "Home" });
+        })
+        .catch(error => {
+          this.error = error;
+        });
     }
   }
 };
 </script>
-
-<style scoped>
-
-</style>
