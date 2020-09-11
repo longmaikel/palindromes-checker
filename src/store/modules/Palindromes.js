@@ -5,11 +5,13 @@ const state = {
         value: '',
         isPalidrome: null
     },
-    palidromes: data
+    history: data
 
 };
 
-const getters = {};
+const getters = {
+    history: state => state.history
+};
 
 const actions = {};
 

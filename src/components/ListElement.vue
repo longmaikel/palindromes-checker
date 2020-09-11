@@ -1,0 +1,22 @@
+<template>
+  <li>{{ value }}</li>
+</template>
+
+<script>
+export default {
+  props: {
+    value: {
+      type: String,
+      required: true
+    },
+    isPalindrome: {
+      type: Boolean,
+      required: true
+    }
+  }
+}
+</script>
+
+<style scoped>
+
+</style>
