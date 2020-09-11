@@ -1,6 +1,10 @@
 const state = {
-    user: 'root',
-    password: 'secret',
+    credentials: {
+        user: 'root',
+        password: 'secret'
+    },
+    user: null,
+    password: null,
     logged: false
 };
 
