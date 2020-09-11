@@ -1,7 +1,7 @@
 <template>
 <div class="palindrome-form">
   <form @submit.prevent="checkPalindrome">
-    <span class="info">{{ info }}</span>
+    <span class="message">{{ message }}</span>
     <input type="text" name="palindrome" placeholder="Palindrome" v-model="palindrome">
     <button type="submit">Check</button>
   </form>
@@ -17,13 +17,7 @@ export default {
   },
   methods: {
     checkPalindrome() {
-      this.$store.dispatch('checkPalindrome', this.palindrome)
-          .then(() => {
-            this.$router.push({name: "Home"})
-          })
-          .catch(error => {
-            this.error = error;
-          });
+      this.$store.dispatch('checkPalindrome', this.palindrome);
     }
   }
 };

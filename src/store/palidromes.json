@@ -1,0 +1,22 @@
+[
+  {
+    "value": "Kobyła ma mały bok",
+    "isPalidrome": true
+  },
+  {
+    "value": "kajak",
+    "isPalidrome": true
+  },
+  {
+    "value": "Vue developer",
+    "isPalidrome": false
+  },
+  {
+    "value": "A to idiota",
+    "isPalidrome": true
+  },
+  {
+    "value": "Wieliczka",
+    "isPalidrome": false
+  }
+]

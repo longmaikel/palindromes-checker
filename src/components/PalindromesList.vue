@@ -1,5 +1,5 @@
 <template>
-
+  <div class="palindromes-list"></div>
 </template>
 
 <script>

@@ -1,4 +1,13 @@
-const state = {};
+import data from "@/store/palidromes.json";
+
+const state = {
+    palidrome: {
+        value: '',
+        isPalidrome: null
+    },
+    palidromes: data
+
+};
 
 const getters = {};
 
