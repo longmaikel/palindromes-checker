@@ -7,14 +7,14 @@ const state = {
 };
 
 const getters = {
-    credentials: state => state.credentials
+    user: state => state.credentials.user,
+    password: state => state.credentials.password
 };
 
 const actions = {
-    login: ({commit}, {user, password}) => {
+    login: ({commit, getters}, {user, password}) => {
         return new Promise((resolve, reject) => {
-            const correctCredentials = getters.credentials;
-            if (user === correctCredentials.user && password === correctCredentials.password) {
+            if (user === getters.user && password === getters.password) {
                 commit('LOGIN', true);
                 resolve(true);
             } else {
