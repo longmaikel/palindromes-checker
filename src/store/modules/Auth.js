@@ -24,7 +24,6 @@ const actions = {
                 reject("Incorrect login or password.");
             }
         })
-
     }
 };
 
