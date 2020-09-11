@@ -21,7 +21,7 @@ const actions = {
                 resolve(true);
             } else {
                 commit('LOGIN', false);
-                reject(false);
+                reject("Incorrect login or password.");
             }
         })
 
