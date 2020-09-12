@@ -2,8 +2,12 @@
 <div class="login-form">
   <form @submit.prevent="login">
     <span class="error">{{ error }}</span>
-    <input type="text" name="user" placeholder="Login" v-model="user">
-    <input type="password" name="password" placeholder="Password" v-model="password">
+    <label>
+      <input type="text" name="user" placeholder="Login" v-model="user">
+    </label>
+    <label>
+      <input type="password" name="password" placeholder="Password" v-model="password">
+    </label>
     <button type="submit">Sign In</button>
   </form>
 </div>

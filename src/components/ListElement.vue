@@ -1,5 +1,7 @@
 <template>
-  <li>{{ value }}</li>
+  <li :class="isPalindrome ? 'palindrome' : 'non-palindrome'">
+    {{ value }}
+  </li>
 </template>
 
 <script>
@@ -16,7 +18,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-
-</style>

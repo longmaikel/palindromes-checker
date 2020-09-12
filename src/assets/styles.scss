@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap');
+
+$error: #FF0000;
+$success: #008000;
+$blue: #6394EC;
+$blueDarken: darken($blue, 1);
+$white: #FFFFFF;
+$disabled: #B5B5B5;
+$background: #CDCDCD;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: $background;
+  font-family: 'Lato', sans-serif;
+}
+
+.container {
+  width: 800px;
+  margin: auto;
+}
+
+h1, h2 {
+  text-transform: uppercase;
+  text-align: center;
+}
+
+h1 {
+  font-size: 48px;
+}
+
+h2 {
+  font-size: 36px;
+}
+
+.palindrome {
+  color: $success;
+}
+
+.non-palindrome {
+  color: $error
+}
+
+input, button {
+  display: block;
+  width: 100%;
+  border: 0;
+  font-size: 20px;
+  padding: 10px 20px;
+  margin: 20px 0;
+}
+
+button {
+  background-color: $blue;
+  color: $white;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+}
+
+button:hover {
+  background-color: $blueDarken;
+  color: $white;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+}
+
+button:disabled {
+  background-color: $disabled;
+}
+
+form {
+  width: 400px;
+  margin: 100px auto
+}
+
+.error {
+  color: $error;
+}
+
+.message {
+  color: $success;
+}
+
+ul {
+  font-size: 18px;
+  text-align: center;
+  padding: 0;
+}
