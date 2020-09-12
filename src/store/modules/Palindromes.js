@@ -1,10 +1,6 @@
 import data from "@/store/palidromes.json";
 
 const state = {
-  palindrome: {
-    value: "",
-    isPalidrome: null
-  },
   history: data
 };
 
