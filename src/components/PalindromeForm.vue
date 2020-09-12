@@ -1,12 +1,20 @@
 <template>
-<div class="palindrome-form">
-  <form @submit.prevent="checkPalindrome">
-    <input type="text" name="palindrome" placeholder="Palindrome" v-model="palindrome" @focusin="clear">
-    <span class="message" v-if="message">{{ message }}</span>
-    <span class="error" v-if="error">{{ error }}</span>
-    <button type="submit" :disabled="!palindrome">Check</button>
-  </form>
-</div>
+  <div class="palindrome-form">
+    <form @submit.prevent="checkPalindrome">
+      <label>
+        <input
+          type="text"
+          name="palindrome"
+          placeholder="Palindrome"
+          v-model="palindrome"
+          @focusin="clear"
+        />
+      </label>
+      <span class="message" v-if="message">{{ message }}</span>
+      <span class="error" v-if="error">{{ error }}</span>
+      <button type="submit" :disabled="!palindrome">Check</button>
+    </form>
+  </div>
 </template>
 <script>
 export default {
@@ -28,10 +36,11 @@ export default {
       }
     },
     checkPalindrome() {
-      this.$store.dispatch('checkPalindrome', this.palindrome)
-      .then(message => this.message = message)
-      .catch(error => this.error = error)
-      .finally(() => this.isChecked = true)
+      this.$store
+        .dispatch("checkPalindrome", this.palindrome)
+        .then(message => (this.message = message))
+        .catch(error => (this.error = error))
+        .finally(() => (this.isChecked = true));
     }
   }
 };
