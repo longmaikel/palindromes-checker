@@ -7,6 +7,7 @@ const state = {
 };
 
 const getters = {
+  logged: state => state.logged,
   user: state => state.credentials.user,
   password: state => state.credentials.password
 };

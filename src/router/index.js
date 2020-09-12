@@ -2,13 +2,18 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 
+import {loginMiddleware} from "@/middleware/middleware";
+
 Vue.use(VueRouter);
 
 const routes = [
   {
     path: "/",
     name: "Home",
-    component: Home
+    component: Home,
+    beforeEnter: (to, from, next) => {
+      loginMiddleware(to, from, next);
+    }
   },
   {
     path: "/login",
